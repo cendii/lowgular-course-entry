@@ -21,8 +21,9 @@ export class EmployeeFormComponent {
 
   onFormSubmitted(form: CreateEmployeeModel) {
     this._employeeService.create({ email: form.email, name: form.name, age: form.age, salary: form.salary}).subscribe();
+    this.onButtonClicked(form)
   }
-  onButtonClicked(form: { email: string, age: string, salary: string}) {
+  onButtonClicked(form: CreateEmployeeModel) {
     alert ('User was successfully added to the database. Email: ' + form.email +
       ', Age: ' + form.age + ', Salary: ' + form.salary)}
 }
