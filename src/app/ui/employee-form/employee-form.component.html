@@ -1,13 +1,14 @@
-<form [formGroup]="employeeForm">
-  <input type="text" formControlName="name" placeholder="Name">
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)"
+      (ngSubmit)="onButtonClicked(employeeForm.value)">
+
+  <input type="text" formControlName="email" placeholder="Email">
   <input type="number" formControlName="age" placeholder="Age">
   <input type="number" formControlName="salary" placeholder="Salary">
   <input type="submit" [disabled]="employeeForm.invalid" value="Submit">
 </form>
 
+<!--<div *ngIf="!employeeForm.invalid">
   Your new employee: {{ employeeForm.value.name}}, age: {{ employeeForm.value.age}}
   with salary {{ employeeForm.value.salary}} $ will be added to the system
-
-
-
+</div>-->
 
