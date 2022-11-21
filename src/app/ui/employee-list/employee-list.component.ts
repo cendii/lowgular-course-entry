@@ -5,6 +5,7 @@ import {ProjectService} from "../../services/project.service";
 import {EmployeeModel} from "../../model/employee.model";
 import {EmployeeService} from "../../services/employee.service";
 import {PersonModel} from "../../model/person.model";
+import {CreateEmployeeModel} from "../../model/create-employee.model";
 
 
 
@@ -19,8 +20,11 @@ export class EmployeeListComponent {
 
   constructor(private _employeeService: EmployeeService) {
   }
-  remove(personalNumber:string){
+
+  remove(personalNumber: string) {
     this._employeeService.delete(personalNumber).subscribe();
+    {
+      alert ('User was successfully removed')}
   }
 
 }
