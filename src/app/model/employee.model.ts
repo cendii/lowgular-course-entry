@@ -1,5 +1,5 @@
 export interface EmployeeModel {
-  personalNumber: string;
+  id: string;
   name: string;
   email: string;
   image:string;
